@@ -1,7 +1,7 @@
 applications:
   - name: ibmcloud-cicd-restapi
     buildpack: https://github.com/cloudfoundry/java-buildpack.git
-    memory: 512M
+    memory: 1024M
     instances: 1
     path: api.war
     timeout: 180
