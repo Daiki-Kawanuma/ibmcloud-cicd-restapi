@@ -1,9 +1,7 @@
 applications:
   - name: ibmcloud-cicd-restapi
-    buildpack: https://github.com/cloudfoundry/java-buildpack.git
+    buildpack: liberty-for-java
     memory: 1024M
     instances: 1
     path: api.war
-    timeout: 180
-    routes:
-      - route: ibmcloud-cicd-restapi.mybluemix.net/api
+    timeout: 180    
