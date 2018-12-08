@@ -5,7 +5,7 @@ buildscript {
 	repositories {
 		mavenCentral()
 		maven {
-			url = System.getenv('NEXUS_URL')
+			url = System.getenv('MAVEN_SNAPSHOT_URL')
 		}
 	}
 	dependencies {
@@ -17,6 +17,12 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+
+war {
+	enabled = true
+	archiveName 'api.war'
+}
 
 group = 'com.project_respite.ibmcloud_cicd'
 version = '0.0.1-SNAPSHOT'
@@ -25,13 +31,13 @@ sourceCompatibility = 1.8
 repositories {
 	mavenCentral()
 	maven {
-		url = System.getenv('NEXUS_URL')
+		url = System.getenv('MAVEN_SNAPSHOT_URL')
 	}
 }
 
 
 dependencies {
-	implementation('com.project-respite:ibmcloud-cicd-common:1.0-SNAPSHOT')
+	implementation('com.project-respite:ibmcloud-cicd-common:1.0.1-SNAPSHOT')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
