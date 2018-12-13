@@ -1,0 +1,7 @@
+applications:
+  - name: ibmcloud-cicd-restapi
+    buildpack: liberty-for-java
+    memory: 512M
+    instances: 1
+    path: api.war
+    timeout: 180
